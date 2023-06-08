@@ -15,18 +15,20 @@ public class Chapter5 {
 		Task task4 = new Task(LocalDate.of(2021, 8, 10), "散髪に行く");
 		Task task5 = new Task(LocalDate.of(2021, 11, 9), "スクールの課題を解く");
 
-		List<Task> task = new ArrayList<>();
-		task.add(task1);
-		task.add(task2);
-		task.add(task3);
-		task.add(task4);
-		task.add(task5);
+		List<Task> tasks = new ArrayList<>();
+		tasks.add(task1);
+		tasks.add(task2);
+		tasks.add(task3);
+		tasks.add(task4);
+		tasks.add(task5);
 
 		Comparator<Task> taskComperator = Comparator.comparing(Task::getDate);
 
-		List<Task> sortList = task.stream().sorted(taskComperator).collect(Collectors.toList());
+		List<Task> sortList = tasks.stream().sorted(taskComperator).collect(Collectors.toList());
 
-		System.out.println(sortList);
+		for (Task task : sortList) {
+			System.out.println(task.getDate() + ":" + task.getContent());
+		}
 
 	}
 

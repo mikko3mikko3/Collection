@@ -27,9 +27,4 @@ public class Task {
 		this.content = content;
 	}
 
-	@Override
-	public String toString() {
-		return date + ":" + content;
-	}
-
 }
